@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: python-web-vs
+spec:
+  hosts:
+    - "$(DOMAIN)"  # Variable placeholder
+  gateways:
+    - python-web-gateway
+  http:
+    - route:
+        - destination:
+            host: python-web-service
+            subset: blue
+          weight: 100
+        - destination:
+            host: python-web-service
+            subset: green
+          weight: 0

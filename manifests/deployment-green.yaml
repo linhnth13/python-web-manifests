@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-web-green
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: python-web
+      version: green
+  template:
+    metadata:
+      labels:
+        app: python-web
+        version: green
+    spec:
+      containers:
+        - name: python-web
+          image: gcr.io/my-gitops-project/python-web:v1.0.0
+          ports:
+            - containerPort: 5000
