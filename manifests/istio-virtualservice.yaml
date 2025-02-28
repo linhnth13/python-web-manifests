@@ -12,8 +12,8 @@ spec:
         - destination:
             host: python-web-service
             subset: blue
-          weight: 100
+          weight: 0
         - destination:
             host: python-web-service
             subset: green
-          weight: 0
+          weight: 100
