@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: python-web
-          image: gcr.io/my-gitops-project/python-web:v1.0.1
+          image: gcr.io/my-gitops-project/python-web:v1.0.4
           ports:
             - containerPort: 5000
