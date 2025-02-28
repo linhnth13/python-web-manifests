@@ -10,7 +10,7 @@ resources:
 configMapGenerator:
   - name: env-config
     literals:
-      - DOMAIN=example.com  # Default value, overridden later
+      - DOMAIN=example.local  # Default value, overridden later
 replacements:
   - source:
       kind: ConfigMap
