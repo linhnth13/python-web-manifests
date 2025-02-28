@@ -11,4 +11,4 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - "example.com"  # Default, replaced by Kustomize
+        - "example.local"  # Default, replaced by Kustomize
