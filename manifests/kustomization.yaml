@@ -9,13 +9,21 @@ resources:
   - istio-gateway.yaml
 configMapGenerator:
   - name: env-config
-    files:
-      - env.yaml
-vars:
-  - name: DOMAIN
-    objref:
+    literals:
+      - DOMAIN=example.com  # Default value, overridden later
+replacements:
+  - source:
       kind: ConfigMap
       name: env-config
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.DOMAIN
+      fieldPath: data.DOMAIN
+    targets:
+      - select:
+          kind: VirtualService
+          name: python-web-vs
+        fieldPaths:
+          - spec.hosts.0
+      - select:
+          kind: Gateway
+          name: python-web-gateway
+        fieldPaths:
+          - spec.servers.0.hosts.0

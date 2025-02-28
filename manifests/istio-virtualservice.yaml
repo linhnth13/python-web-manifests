@@ -4,7 +4,7 @@ metadata:
   name: python-web-vs
 spec:
   hosts:
-    - "$(DOMAIN)"  # Variable placeholder
+    - "example.com"  # Default, replaced by Kustomize
   gateways:
     - python-web-gateway
   http:

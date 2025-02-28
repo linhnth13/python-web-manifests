@@ -11,4 +11,4 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - "$(DOMAIN)"  # Variable placeholder
+        - "example.com"  # Default, replaced by Kustomize
